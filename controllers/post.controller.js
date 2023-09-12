@@ -51,9 +51,9 @@ const editarPost = async (req, res) => {
 
     try {
             const id = req.params.id
-            const { titulo, contenido, imagen, fecha, autor } = req.body
+            const { titulo, contenido, link_imagen, autor } = req.body
         
-            await PostModel.update({ titulo, contenido, imagen, fecha, autor } , {
+            await PostModel.update({ titulo, contenido, link_imagen, autor  } , {
                 where: {
                     id:id
                 }
