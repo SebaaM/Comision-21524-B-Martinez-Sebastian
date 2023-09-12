@@ -1,0 +1,44 @@
+// Imports
+const express = require('express')
+const  cors = require('cors')
+const morgan = require('morgan')
+const { sequelize } = require('./database')
+const ejs = require ('ejs')
+const path = require ('node:path')
+
+const app = express()
+app.set('view engine' , 'ejs')
+app.set ('views', path.join(__dirname, '/views'))
+
+
+// Inicio de aplicacion.
+app.listen (3000, () => {
+    sequelize.sync({ force: false })
+       // force: true  borra la BD y la crea de nuevo, se pierden los registros.
+    .then(() => {
+        console.log("Base de datos conectada")
+    })
+    .catch ((err)=> {
+        console.error(err)
+    })
+
+    console.log('Servidor corriendo en el puerto 3000')
+})
+
+
+app.use(express.static(__dirname + '/public'))
+
+app.use(cors())
+app.use(morgan('dev'))
+app.use(express.json())
+
+// Rutas creadas.
+app.use('/post', require('./routes/post.routes'))
+
+
+// plantilla Main
+app.get('/', (req, res) => {
+    res.send('main')
+})
+
+app.use(express.urlencoded( {extende:false}))
