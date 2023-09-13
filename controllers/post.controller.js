@@ -32,7 +32,8 @@ const verPostPorId = async (req, res) => {
 
 // Nuevo post
 const crearPost = async (req, res) => {
-
+    
+    
     try {
             const { titulo, contenido, link_imagen, autor } = req.body
             const fecha_creacion = Date.now()
@@ -70,7 +71,7 @@ const editarPost = async (req, res) => {
 // Elimina el registro de la base de datos.
 const eliminarPost = async (req, res) => {
  
-    // hacer el borradom logico con la variable :activo:
+    // hacer el borrado logico con la variable :activo:
     try {
         const id = req.params.id 
         await PostModel.destroy( {

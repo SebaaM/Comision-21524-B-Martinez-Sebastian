@@ -9,7 +9,7 @@ const path = require ('node:path')
 const app = express()
 app.set('view engine' , 'ejs')
 app.set ('views', path.join(__dirname, '/views'))
-
+app.use(express.static(__dirname + '/public'))
 
 // Inicio de aplicacion.
 app.listen (3000, () => {
@@ -31,6 +31,7 @@ app.use(express.static(__dirname + '/public'))
 app.use(cors())
 app.use(morgan('dev'))
 app.use(express.json())
+app.use(express.urlencoded( {extende:false}))
 
 // Rutas creadas.
 app.use('/post', require('./routes/post.routes'))
@@ -38,7 +39,7 @@ app.use('/post', require('./routes/post.routes'))
 
 // plantilla Main
 app.get('/', (req, res) => {
-    res.send('main')
+    res.render('main')
 })
 
-app.use(express.urlencoded( {extende:false}))
+

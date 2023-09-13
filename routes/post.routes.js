@@ -16,5 +16,12 @@ router.post('/',crearPost);
 router.put('/:id',editarPost);
 router.delete('/:id',eliminarPost);
  
+//middleware
+router.use('/', (req, res, next ) => {
+    console.log('Middleware asjdhnasjk')
+    next()
+})
+
+
 
 module.exports = router
