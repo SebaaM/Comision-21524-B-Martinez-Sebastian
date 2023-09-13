@@ -33,7 +33,7 @@ const verPostPorId = async (req, res) => {
 // Nuevo post
 const crearPost = async (req, res) => {
     
-    
+
     try {
             const { titulo, contenido, link_imagen, autor } = req.body
             const fecha_creacion = Date.now()

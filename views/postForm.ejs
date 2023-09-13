@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('./partes/head') %>
+</head>
+
+<body class=" h-100 text-center text-white">
+    <%- include('./partes/navbar') %>
+
+    <form action="/post" method="post" class="form-control">
+    
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Titulo</label>
+        <input type="text" class="form-control" id="titulo" placeholder="...">
+    </div>
+    <div class="mb-3">
+        <label for="contenido" class="form-label">Contenido</label>
+        <textarea class="form-control" id="contenido" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="autor" class="form-label">Autor</label>
+        <input type="text" class="form-control" id="autor" placeholder="...">
+    </div>
+    <div class="mb-3">
+        <label for="imagen" class="form-label">Imagen</label>
+        <input type="text" class="form-control" id="imagen" placeholder="...">
+    </div>
+
+    <button type="submit" class="btn btn-large btn-success">Crear</button>
+</form>
+
+
+
+    <%- include('./partes/scripts') %>
+    <%- include('./partes/footer') %>
+</body>
+
+</html>

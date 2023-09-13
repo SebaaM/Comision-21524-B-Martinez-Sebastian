@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <%- include('./partes/head') %>
 </head>
-<body>
+
+<body class=" h-100 text-center text-white">
     <%- include('./partes/navbar') %>
-<h1>Main</h1>
-    <%- include('./partes/scripts') %>
-    <%- include('./partes/footer') %>
+
+
+        <div class="cover-container">
+            <main class=" container m-lg-5 p-lg-5 ">
+                <h1>Inicio Blogs</h1>
+                <p class="lead m-2">La portada es una plantilla de una página para crear páginas de inicio simples y
+                    hermosas. Descarga, edita el texto y agrega tu propia foto de fondo a pantalla completa para
+                    personalizarla.</p>
+                <p class="lead m-2 py-2">
+                    <a href="#" class="btn btn-lg btn-primary fw-bold border-light ">Ver publicaciones</a>
+                    <a href="#" class="btn btn-lg btn-success fw-bold border-light ">Crear publicacion</a>
+                </p>
+            </main>
+
+        </div>
+
+        <div class="container m-lg-5 py-lg-2  ">
+            Bienvenido a Blogs
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quas ad amet earum, unde enim alias quod
+            repudiandae temporibus voluptatum!
+        </div>
+
+
+
+        <%- include('./partes/scripts') %>
+            <%- include('./partes/footer') %>
 </body>
+
 </html>

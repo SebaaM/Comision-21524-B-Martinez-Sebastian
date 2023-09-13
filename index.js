@@ -39,7 +39,15 @@ app.use('/post', require('./routes/post.routes'))
 
 // plantilla Main
 app.get('/', (req, res) => {
+
     res.render('main')
 })
 
+// middleware
+function  middlewarePost(req, res , next)  {
+    console.log('Middleware :: ')
+    next()
+}
+
+app.use(middlewarePost)
 
