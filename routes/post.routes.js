@@ -19,7 +19,6 @@ router.delete('/:id',eliminarPost);
 
 
 
-
 module.exports = router
 
 // hacer el middleware y dentro el res.render('form ?')

@@ -12,7 +12,7 @@ const verPosts = async (req, res) => {
     
         res.status(200).json(todos_posts)
     } catch (error) {
-        res.status(500).send('Erorr al ver las posts.')
+        //res.status(500)
         console.log(error)
     }
 }

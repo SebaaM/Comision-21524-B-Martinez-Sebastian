@@ -5,6 +5,8 @@ const morgan = require('morgan')
 const { sequelize } = require('./database')
 const ejs = require ('ejs')
 const path = require ('node:path')
+const { PostModel } = require('./models/Post')
+const { verPosts } = require('./controllers/post.controller')
 
 const app = express()
 app.set('view engine' , 'ejs')
@@ -41,6 +43,16 @@ app.use('/post', require('./routes/post.routes'))
 app.get('/', (req, res) => {
 
     res.render('main')
+})
+
+app.get('/posts', (req, res) => {
+    const posts = verPosts()
+    res.render('posts', posts)
+})
+
+app.get('/postForm', (req, res) => {
+    
+    res.render('postForm')
 })
 
 // middleware
