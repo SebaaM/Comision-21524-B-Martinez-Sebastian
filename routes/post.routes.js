@@ -13,7 +13,7 @@ const router = Router()
 router.get('/',verPosts);
 router.get('/:id',verPostPorId);
 router.post('/',crearPost);
-router.put('/:id',editarPost);
+router.post('/:id',editarPost);
 router.delete('/:id',eliminarPost);
  
 

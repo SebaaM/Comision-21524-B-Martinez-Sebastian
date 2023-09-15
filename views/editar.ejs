@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('./partes/head') %>
+</head>
+<!-- text-center -->
+<body class=" text-start text-white">
+    <%- include('./partes/navbar') %>
+
+    <form action="/post/<%= post.id %>" method="post" class="form-control container mt-4 p-4 ">
+    
+    <div class="m-2 pt-2">
+        <span class=""> <b> Editar post: </b></span>
+        <br><br>
+
+        <div class="row m-2">
+
+            <div class="mb-2 col-6">
+                <label for="titulo" class="form-label">Titulo:</label>
+                <input type="text" class="form-control " name="titulo" id="titulo" value="<%= post.titulo %>" placeholder="Ingrese titutlo del blog" required>
+                <small id="helpTitulo" class="text-muted text-primary">Titulo principal del bolg que se mostrara.</small>
+            </div>
+            
+            <div class="mb-2 col-4 ">
+                <label for="autor " class="form-label ">Autor:</label>
+                <input type="text " class="form-control " value="<%= post.autor %>" name="autor" id="autor" placeholder="Ingrese Autor">
+            </div>
+
+        </div>
+
+        <div class="m-3 row">
+            <label for="contenido" class="form-label">Contenido:</label>
+            <textarea class="form-control" id="contenido" name="contenido" rows="4"><%= post.contenido %> </textarea>
+        </div>
+
+        <div class="m-3 py-3 row">
+            <label for="imagen" class="form-label">Link de Imagen</label>
+            <input type="text" class="form-control require" name="link_imagen" id="link_imagen" value="<%= post.link_imagen %>" placeholder="Ingrese link de la imagen" required>
+            <small id="helpImagen" class="text-muted">La imagen se mostrara una vez creado el blog.</small>
+        </div>
+
+        <div class=" d-grid gap-2 d-md-flex justify-content-md-center ">
+            <div class="row col-3 mt-3">
+                <button type="submit" class="btn btn-lg btn-warning">Editar</button>
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+
+    <%- include('./partes/scripts') %>
+    <%- include('./partes/footer') %>
+</body>
+
+</html>

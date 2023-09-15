@@ -60,7 +60,7 @@ const editarPost = async (req, res) => {
                 }
             })
         
-            res.status(202).send('post modificada correctamente')
+            res.status(202).redirect('/posts')
     } catch (error) {
         res.status(500).send('Erorr al modificar la post.')
         console.log(error)

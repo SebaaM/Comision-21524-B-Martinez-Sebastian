@@ -28,6 +28,8 @@
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
                     <% listaDePosts.forEach((post) => { %>
+                        <!-- if estado == true   (para el borrado logico)-->
+
                         <!-- Una carta de un blog -->
                         <div class="col">
                             <div class="card shadow-sm text-black">
@@ -38,8 +40,8 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
                                             <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button> -->
-                                            <button type="button" class="btn btn-sm btn-outline-warning">Editar</button>
-                                            <button type="button" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                                            <a href="/editarPost/<%= post.id %>" class="btn btn-sm btn-outline-warning" role="button">Editar</a>
+                                            <a href="/postElimnar/<%= post.id %>" class="btn btn-sm btn-outline-danger" role="button">Eliminar</a>
                                         </div>
                                         <small class="text-muted"> <%= post.createdAt %></small>
                                     </div>
