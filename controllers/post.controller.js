@@ -13,7 +13,7 @@ const verPosts = async (req, res) => {
         res.status(200).json(todos_posts)
     } catch (error) {
         //res.status(500)
-        console.log(error)
+        console.error(error)
     }
 }
 
@@ -39,7 +39,7 @@ const crearPost = async (req, res) => {
             const fecha_creacion = Date.now()
             await PostModel.create ({ titulo, contenido, link_imagen, fecha_creacion, autor })
         
-            res.status(201).send("Se creo una nueva post")
+            res.status(201).redirect("posts")
     } catch (error) {
         res.status(500).send('Erorr al crear la post.')
         console.log(error)

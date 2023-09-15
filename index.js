@@ -45,9 +45,9 @@ app.get('/', (req, res) => {
     res.render('main')
 })
 
-app.get('/posts', (req, res) => {
-    const posts = verPosts()
-    res.render('posts', posts)
+app.get  ('/posts', async (req, res) => {
+    const listaDePosts = await PostModel.findAll()
+    res.render('posts', {listaDePosts: listaDePosts.reverse() })
 })
 
 app.get('/postForm', (req, res) => {
@@ -55,7 +55,7 @@ app.get('/postForm', (req, res) => {
     res.render('postForm')
 })
 
-// middleware
+// middleware de la pagina main.
 function  middlewarePost(req, res , next)  {
     console.log('Middleware :: ')
     next()

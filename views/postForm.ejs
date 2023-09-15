@@ -3,31 +3,49 @@
 <head>
     <%- include('./partes/head') %>
 </head>
-
-<body class=" h-100 text-center text-white">
+<!-- text-center -->
+<body class=" text-start text-white">
     <%- include('./partes/navbar') %>
 
-    <form action="/post" method="post" class="form-control">
+    <form action="/post" method="post" class="form-control container mt-4 p-4 ">
     
-    <div class="mb-3">
-        <label for="titulo" class="form-label">Titulo</label>
-        <input type="text" class="form-control" id="titulo" placeholder="Ingrese titutlo del blog">
-    </div>
-    <div class="mb-3">
-        <label for="contenido" class="form-label">Contenido</label>
-        <textarea class="form-control" id="contenido" rows="3"></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="autor" class="form-label">Autor</label>
-        <input type="text" class="form-control" id="autor" placeholder="Ingrese Autor">
-    </div>
-    <div class="mb-3">
-        <label for="imagen" class="form-label">Imagen</label>
-        <input type="text" class="form-control" id="imagen" placeholder="Ingrese link de la imagen">
-    </div>
+    <div class="m-2 pt-2">
+        <span class=""> <b> Nuevo post: </b></span>
+        <br><br>
 
-    <button type="submit" class="btn btn-large btn-success">Crear</button>
-</form>
+        <div class="row m-2">
+
+            <div class="mb-2 col-6">
+                <label for="titulo" class="form-label">Titulo:</label>
+                <input type="text" class="form-control " name="titulo" id="titulo" placeholder="Ingrese titutlo del blog" required>
+                <small id="helpTitulo" class="text-muted text-primary">Titulo principal del bolg que se mostrara.</small>
+            </div>
+            
+            <div class="mb-2 col-4 ">
+                <label for="autor " class="form-label ">Autor:</label>
+                <input type="text " class="form-control " name="autor" id="autor" placeholder="Ingrese Autor">
+            </div>
+
+        </div>
+
+        <div class="m-3 row">
+            <label for="contenido" class="form-label">Contenido:</label>
+            <textarea class="form-control" id="contenido" name="contenido" rows="4"></textarea>
+        </div>
+
+        <div class="m-3 py-3 row">
+            <label for="imagen" class="form-label">Link de Imagen</label>
+            <input type="text" class="form-control require" name="link_imagen" id="link_imagen" placeholder="Ingrese link de la imagen" required>
+            <small id="helpImagen" class="text-muted">La imagen se mostrara una vez creado el blog.</small>
+        </div>
+
+        <div class=" d-grid gap-2 d-md-flex justify-content-md-center ">
+            <div class="row col-3 mt-3">
+                <button type="submit" class="btn btn-lg btn-success">Crear</button>
+            </div>
+        </div>
+    </div>
+    </form>
 
 
 
