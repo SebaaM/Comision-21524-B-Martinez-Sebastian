@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +6,6 @@
 
 <body class=" h-100 text-center text-white">
     <%- include('./partes/navbar') %>
-
     
     <main>
         <section class="py-5 text-center container">
@@ -23,6 +19,7 @@
                 </div>
             </div>
         </section>
+        
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -31,23 +28,7 @@
                         <!-- if estado == true   (para el borrado logico)-->
 
                         <!-- Una carta de un blog -->
-                        <div class="col">
-                            <div class="card shadow-sm text-black">
-                                <img class="bd-placeholder-img card-img-top" width="100%" height="255" src="<%= post.link_imagen %>" alt="imagen del blog.">
-                                <div class="card-body">
-                                    <h5 class="card-title"><%= post.titulo  %></h5>
-                                    <p class="card-text"> <%= post.contenido %> </p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button> -->
-                                            <a href="/editarPost/<%= post.id %>" class="btn btn-sm btn-outline-warning" role="button">Editar</a>
-                                            <a href="/postElimnar/<%= post.id %>" class="btn btn-sm btn-outline-danger" role="button">Eliminar</a>
-                                        </div>
-                                        <small class="text-muted"> <%= post.createdAt %></small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%- include('./partes/card', {post}) %>
                     <% }) %>
 
                 </div>

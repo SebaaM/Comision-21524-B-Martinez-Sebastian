@@ -2,7 +2,7 @@
 
 const { PostModel } = require('../models/Post')
 
-// CRUD del modelo posts
+// CRUD del modelo post
 
 
 // Devuelve todos los post creados.

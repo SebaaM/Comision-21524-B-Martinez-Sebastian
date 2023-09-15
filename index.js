@@ -57,9 +57,10 @@ app.get  ('/posts', async (req, res) => {
     res.render('posts', {listaDePosts: listaDePosts.reverse() })
 })
 
-// ruta crear
+// ruta crear, crear middleware para recortar fecha y guardar en BD = fecha_creacion.
 app.get('/postForm', (req, res) => {
     
+
     res.render('postForm')
 })
 

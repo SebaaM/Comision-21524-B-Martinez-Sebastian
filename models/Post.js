@@ -2,6 +2,22 @@ const { sequelize } = require ('../database')
 const { DataTypes } = require ('sequelize') 
 
 
+/*
+    post : {
+        id: Num,
+        tituto: String,
+        contenido: String,
+        link_imagen: String,
+        fecha_creacion: Date,
+        autor: String,
+        activo: Boolean,
+    
+        createdAt: Date,
+        lastUpdate: Date,
+    }
+
+*/
+
 const PostModel = sequelize.define('posts', {
     //Id
     titulo : {
@@ -37,7 +53,8 @@ const PostModel = sequelize.define('posts', {
         defaultValue: true,
         
     }
-
+    // createdAt
+    // lastUpdate
 
 }) 
 
